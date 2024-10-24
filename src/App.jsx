@@ -1,5 +1,12 @@
+import {Post} from "./components/Post.jsx";
+
 function App() {
-  return <h1>Hello World!</h1>;
+  return (
+    <>
+      <Post author='Hemanth' title='Hemanth first book'/>
+      <Post author='Nikhil' title='Nikhil"s first book'/>
+    </>
+  );
 }
 
 export default App;
