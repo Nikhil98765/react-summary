@@ -1,14 +1,27 @@
 import {Post} from "./Post.jsx";
 import styles from "./PostsList.module.css";
 import NewPost from "./NewPost.jsx";
+import {useState} from "react";
 
 export const PostsList = () => {
+
+  const [enteredBody, setEnteredBody] = useState('');
+  const [enteredAuthor, setEnteredAuthor] = useState('');
+
+  function onBodyChangeHandler(event) {
+    setEnteredBody(event.target.value);
+  }
+
+  function onAuthorChangeHandler(event) {
+    setEnteredAuthor(event.target.value);
+  }
+
     return (
       <>
-        <NewPost />
+        <NewPost onBodyChange={onBodyChangeHandler} onAuthorChange={onAuthorChangeHandler} />
         <ul className={styles.posts}>
-          <Post author='Hemanth' title='Hemanth first book'/>
-          <Post author='Nikhil' title='Nikhil"s first book'/>
+          <Post author={enteredAuthor} body={enteredBody}/>
+          <Post author='Nikhil' body='Nikhil"s first book'/>
         </ul>
       </>
 
