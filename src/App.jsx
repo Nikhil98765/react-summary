@@ -1,11 +1,10 @@
-import {Post} from "./components/Post.jsx";
+import {PostsList} from "./components/PostsList.jsx";
 
 function App() {
   return (
-    <>
-      <Post author='Hemanth' title='Hemanth first book'/>
-      <Post author='Nikhil' title='Nikhil"s first book'/>
-    </>
+    <main>
+      <PostsList />
+    </main>
   );
 }
 
