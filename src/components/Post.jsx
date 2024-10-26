@@ -1,6 +1,5 @@
 import styles from './Post.module.css';
 
-
 export const Post = ({author, body}) => {
 
     return (

@@ -1,6 +1,5 @@
 import styles from './Modal.module.css';
 
-
 export const Modal = ({ children, onClose }) => {
   return (
     <>
