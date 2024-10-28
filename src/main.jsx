@@ -6,6 +6,7 @@ import Posts, {loader as postsLoader} from './routes/Posts.jsx';
 import './index.css';
 import NewPost, {action as NewPostAction} from "./routes/NewPost.jsx";
 import {RootLayout} from "./routes/RootLayout.jsx";
+import PostDetails, {loader as postDetailsLoader} from "./routes/PostDetails.jsx";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,11 @@ const router = createBrowserRouter([
             path: '/create-post',
             element: <NewPost />,
             action: NewPostAction
+          },
+          {
+            path: ':id',
+            element: <PostDetails />,
+            loader: postDetailsLoader
           }
         ]
       },

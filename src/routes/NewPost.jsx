@@ -3,7 +3,7 @@ import {Form, Link, redirect} from "react-router-dom";
 import classes from './NewPost.module.css';
 import {Modal} from "../components/Modal.jsx";
 
-function NewPost(props) {
+function NewPost() {
 
   return (
     <Modal>
