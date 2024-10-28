@@ -2,10 +2,9 @@ import {useEffect, useState} from "react";
 
 import { Post } from "./Post.jsx";
 import styles from "./PostsList.module.css";
-import NewPost from "./NewPost.jsx";
-import {Modal} from "./Modal.jsx";
 
-export const PostsList = ({isPosting, onStopPosting}) => {
+
+export const PostsList = () => {
 
   const [posts, setPosts] = useState([]);
   const [isFetching, setIsFetching] = useState(false);
@@ -34,14 +33,6 @@ export const PostsList = ({isPosting, onStopPosting}) => {
 
     return (
       <>
-        {isPosting && (
-          <Modal onClose={onStopPosting}>
-            <NewPost
-              onCancel={onStopPosting}
-              onAddPost={addPostHandler}
-            />
-          </Modal>
-        )}
         { !isFetching && (
           posts.length > 0 ?
             <ul className={styles.posts}>
@@ -62,7 +53,6 @@ export const PostsList = ({isPosting, onStopPosting}) => {
             <p>Loading Posts...</p>
           </div>
         }
-
       </>
     );
 }
